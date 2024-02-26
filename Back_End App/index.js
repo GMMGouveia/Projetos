@@ -58,7 +58,7 @@ const classesRouter = require('./ClassesRoom/ClassesRouter');
 app.use('/api/classes',classesRouter);
 
 
-const conection = "mongodb+srv://goncalomGouveia:Gouveia12345@techof.00ekxg0.mongodb.net/Kindergarden?retryWrites=true&w=majority"
+const conection = "mongodb+srv://@techof.00ekxg0.mongodb.net/Kindergarden?retryWrites=true&w=majority"
 
 mongoose.connect(conection,{
     useNewUrlParser: true,
