@@ -1,0 +1,46 @@
+<div class="container">
+    <h1>Add Class</h1>
+    <form [formGroup]="classForm" (submit)="submitClass()">
+        <div class="row">
+           <div class="col">
+                <mat-form-field>
+                    <mat-label>Class Name</mat-label>
+                    <input matInput placeholder="Class Name" formControlName="name" required>
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field>
+                    <mat-label>Year</mat-label>
+                    <input matInput placeholder="year" formControlName="year" required>
+                </mat-form-field>
+            </div>  
+
+          
+
+
+            <div class="students-list">
+                <h3>Students</h3>
+                <div *ngFor="let student of students">
+                    <mat-checkbox (change)="addStudentToClass($event.checked, student)">{{student.firstName}}  {{student.lastName}}</mat-checkbox>
+                </div>
+            </div>
+
+            <div class="teachers-list">
+                <h3>Teachers</h3>
+                <div *ngFor="let teacher of teachers">
+                    <mat-checkbox (change)="addTeacherToClass($event.checked, teacher)">{{teacher.firstName}}  {{teacher.lastName}}</mat-checkbox>
+                </div>
+            </div>
+        
+            
+            <div class="col">
+                <button type="submit" mat-raised-button color="primary" 
+                [disabled]="classForm.invalid">Add <mat-icon>add_box</mat-icon></button>
+            </div>
+
+        </div>
+
+
+    </form>
+</div>

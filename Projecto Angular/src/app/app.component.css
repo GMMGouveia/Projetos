@@ -1,0 +1,38 @@
+.menu-container {
+    position: absolute;
+    top: 0;
+    /* top: var(--mat-toolbar-standard-height); */
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+mat-sidenav {
+    width: 200px;
+}
+
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+mat-sidenav-content {
+    background-color: rgb(95, 93, 93);
+}
+
+.mat-toolbar {
+    background-color: rgb(223, 37, 46);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+}
+
+
+.container-fluid {
+    background-color: rgb(95, 93, 93);
+}
+
+mat-sidenav {
+    background-color: white;
+    font-size: large
+    
+}

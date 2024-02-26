@@ -1,0 +1,66 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1>Next Shift</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <p>Date</p>
+            <p>{{ nextShift.date }}</p>
+        </div>
+        <div class="col-4">
+            <p>WorkPlace</p>
+            <p>{{ nextShift.place }}</p>
+        </div>
+        <div class="col-4">
+            <p>Price per Hour</p>
+            <p>{{ nextShift.pricePerHour }}</p>
+        </div>
+    </div>
+    
+</div>
+<br>
+<br>
+<br>
+<div class="container-fluid" >
+    <div class="row">
+        <div class="col-12">
+            <h1>Week Past Shifts</h1>
+        </div>
+    <table mat-table [dataSource]="weeksShifts" class="mat-elevation-z8">
+
+       
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> Date </th>
+            <td mat-cell *matCellDef="let shift"> {{shift.date}} </td>
+          </ng-container>
+        
+
+        <ng-container matColumnDef="place">
+            <th mat-header-cell *matHeaderCellDef> Shift-Place </th>
+            <td mat-cell *matCellDef="let shift"> {{shift.place}} </td>
+          </ng-container>
+
+
+        <ng-container matColumnDef="pricePerHour">
+            <th mat-header-cell *matHeaderCellDef> Price per hour € </th>
+            <td mat-cell *matCellDef="let shift"> {{shift.pricePerHour}} </td>
+          </ng-container>
+        
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+    </table>
+    
+</div>
+<br>
+<div class="container">
+    <div style="display: flex; justify-content: center; align-items: center; gap: 2rem;">
+        <h2>Highest Payed Month</h2>
+        <h4>{{ monthWithMoreEarnings }}</h4>
+    </div>
+</div>
+

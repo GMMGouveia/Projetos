@@ -1,0 +1,41 @@
+.menu-container {
+    position: absolute;
+    top: 0;
+    /* top: var(--mat-toolbar-standard-height); */
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+mat-sidenav {
+    width: 200px;
+}
+
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+
+
+.mat-toolbar {
+    background-color: rgb(14, 111, 255);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+}
+
+
+/* mat-sidenav {
+    background-color: rgba(127, 199, 241, 0.555);
+    font-size: large
+    
+} */
+
+a :hover{
+    color: white;
+    text-decoration: none;
+}
+
+.ahouver:hover {
+    background-color: rgba(73, 182, 245, 0.897);
+}

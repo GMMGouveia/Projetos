@@ -1,0 +1,40 @@
+
+
+
+
+<div class="container">
+    <h1>Add your child</h1>
+    <form [formGroup]="studentForm" (ngSubmit)="addChild()">
+        <div class="row">
+
+            <div class="col">
+                <mat-form-field>
+                    <mat-label>First Name</mat-label>
+                    <input matInput placeholder="First Name" formControlName="firstName" required>
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field>
+                    <mat-label>Last Name</mat-label>
+                    <input matInput placeholder="Last Name" formControlName="lastName" required>
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field>
+                    <mat-label>Birth Date</mat-label>
+                    <input matInput placeholder="Birth Date" formControlName="birthDate" required>
+                </mat-form-field>
+            </div>
+
+             
+        </div>
+    
+        <div class="col">
+            <button type="submit" mat-raised-button color="primary" 
+            [disabled]="studentForm.invalid">Add</button>
+        </div>
+    
+    </form>
+</div>

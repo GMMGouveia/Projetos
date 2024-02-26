@@ -1,0 +1,80 @@
+<div class="container">
+
+    <form [formGroup]="registerForm" (ngSubmit)="signup()">
+        <div class="row">
+
+            <div class="col">
+                <mat-form-field class="normal">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="Email" formControlName="email" required>
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field class="normal">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" placeholder="Password" formControlName="password" required>
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field class="normal">
+                    <mat-label>First Name</mat-label>
+                    <input matInput placeholder="First Name" formControlName="firstName" required>
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field class="normal">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput placeholder="Last Name" formControlName="lastName" required>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="normal">
+                    <mat-label>Birth Date</mat-label>
+                    <input matInput placeholder="Birth Date" formControlName="birthDate" required>
+                </mat-form-field>
+            </div>
+            
+            <div class="col">
+                <mat-form-field class="normal">
+                    <mat-label>Address</mat-label>
+                    <input matInput placeholder="Address" formControlName="address" required>
+                </mat-form-field>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="normal">
+                        <mat-label>Role</mat-label>
+                        <mat-select formControlName="permissions" required>
+                            <mat-option value="tutor">Tutor</mat-option>
+                            <mat-option value="teacher">Teacher</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field class="normal">
+                        <mat-label>Subject</mat-label>
+                        <input matInput placeholder="subject" formControlName="subject">
+                        <p>If you arent a teacher dont need fill this field</p>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <button class="registerBtn" mat-raised-button color="primary"  type="submit"
+                     [disabled]="registerForm.invalid"   >Signup</button>
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+
+</div>

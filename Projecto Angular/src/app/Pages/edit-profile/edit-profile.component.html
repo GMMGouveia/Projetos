@@ -1,0 +1,68 @@
+<div class="container">
+    <form [formGroup]="editProfileForm">
+        <div class="row">
+            <div class="col">
+                <mat-form-field>
+                    <mat-label>First Name</mat-label>
+                    <input matInput placeholder="First Name" formControlName="firstName">
+                </mat-form-field>
+                <div class="col">
+                    <mat-form-field>
+                        <mat-label>Last Name</mat-label>
+                        <input matInput placeholder="Last Name" formControlName="lastName">
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field>
+                    <mat-label> Birth Date</mat-label>
+                    <input matInput [matDatepicker]="datepicker" formControlName="birthDate" name="date">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+                    <mat-datepicker #datepicker>
+                        <mat-datepicker-actions>
+                            <button mat-button matDatepickerCancel>Cancel</button>
+                            <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                        </mat-datepicker-actions>
+                    </mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="Username" formControlName="email">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="Password" formControlName="password" type="password">
+                </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field>
+                    <mat-label>Confirm Password</mat-label>
+                    <input matInput placeholder=" confirmPassword" formControlName="confirmPassword" type="password">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <button class="editBtn" mat-raised-button color="red" type="submit"
+                   (click)="update()" [disabled]="editProfileForm.invalid"><mat-icon>edit</mat-icon></button>
+                    
+            </div>
+        </div>
+    </form>
+
+</div>

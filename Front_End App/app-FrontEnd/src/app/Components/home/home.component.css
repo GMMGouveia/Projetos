@@ -1,0 +1,42 @@
+.deleteBtn{
+    background-color: white;
+    border: none;
+    color: red;
+    padding: 0px;
+    
+}
+
+.deleteBtn:hover{
+    background-color: white;
+    border: none;
+    color: rgb(238, 255, 1);
+    padding: 0px;
+}
+
+.addBtn{
+    background-color: white;
+    border: none;
+    color: green;
+    padding: 0px;
+}
+
+.addBtn:hover{
+    background-color: white;
+    border: none;
+    color: rgb(0, 2, 128);
+    padding: 0px;
+}
+
+.editBtn{
+    background-color: white;
+    border: none;
+    color: rgba(255, 123, 0, 0.699);
+    padding: 0px;
+}
+
+.editBtn:hover{
+    background-color: white;
+    border: none;
+    color: rgb(0, 255, 234);
+    padding: 0px;
+}

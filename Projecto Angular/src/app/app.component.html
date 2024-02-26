@@ -1,0 +1,43 @@
+<mat-sidenav-container class="menu-container">
+  <mat-sidenav #sidenav mode="side" [opened]="false">
+
+    <mat-nav-list>
+
+      <a *ngIf="isLogged" mat-list-item [routerLink]="'/home'"> <mat-icon>home</mat-icon> </a>
+      <a *ngIf="isLogged" mat-list-item [routerLink]="'/myShifts'"><mat-icon>archive</mat-icon>My shifts </a>
+      <a *ngIf="isLogged" mat-list-item [routerLink]="'/addShift'"><mat-icon>add</mat-icon>Add Shift </a>
+      <a *ngIf="isLogged" mat-list-item [routerLink]="'/editProfile'"><mat-icon>person</mat-icon> Edit Profile </a>
+      
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span><img style="width: 5rem;"  src="https://static.vecteezy.com/system/resources/thumbnails/013/923/535/small_2x/sports-car-logo-png.png" alt=""></span>
+      <span>My App the Shifts</span>
+      
+      <span class="example-spacer"></span>
+      <button *ngIf="!isLogged" mat-button class="" aria-label="Example icon-button with heart icon" (click)="loginClick()">
+        Login
+      </button>
+      <button *ngIf="!isLogged" mat-button aria-label="Example icon-button with share icon" (click)="registerClick()">
+        Register
+      </button>
+      <span *ngIf="isLogged">Hello {{ loggedUser?.firstName}}</span>
+      <button *ngIf="isLogged" mat-button aria-label="Example icon-button with share icon" (click)="logoutClick()">
+        Logout
+      </button>
+    </mat-toolbar>
+
+    <div class="container-fluid" style="padding: 1rem; background-color: rgb(95, 93, 93); margin: 1rem; width: 98%;">
+      <router-outlet></router-outlet>
+
+    </div>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

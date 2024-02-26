@@ -1,0 +1,11 @@
+.mat-mdc-header-row {
+    background-color: rgb(223, 37, 46);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+}
+
+.container-fluid {
+    background-color: rgb(95, 93, 93);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+}

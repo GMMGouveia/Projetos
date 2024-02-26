@@ -1,0 +1,41 @@
+<mat-sidenav-container class="menu-container">
+    <mat-sidenav #sidenav mode="side" [opened]="false" >
+
+        <mat-nav-list>
+            <a class="ahouver" mat-list-item [routerLink]="'/home'" *ngIf="isTeacher"><mat-icon>home</mat-icon>  Home </a>
+            <a class="ahouver" mat-list-item [routerLink]="'/add-class'" *ngIf="isTeacher"><mat-icon>add_box</mat-icon> Add Class  </a>
+            
+
+            <a class="ahouver" mat-list-item [routerLink]="'/home-tutor'" *ngIf="isTutor"> Home <mat-icon>home</mat-icon> </a>
+            <a class="ahouver" mat-list-item [routerLink]="'/add-student'" *ngIf="isTutor"> Add Student<mat-icon>add_box</mat-icon> </a>
+            
+
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+
+            <span>Colégio Diamante<mat-icon>diamond</mat-icon> 🏫</span>
+
+            <span class="example-spacer"></span>
+            
+            <span></span>
+            <span><mat-icon></mat-icon> </span>
+            <button (click)="logout()" mat-button aria-label="Example icon-button with share icon">
+                Logout
+            </button>
+        </mat-toolbar>
+
+        <div
+            style="padding: 1rem; margin: 1rem; width: 98%;">
+            <router-outlet></router-outlet>
+
+        </div>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

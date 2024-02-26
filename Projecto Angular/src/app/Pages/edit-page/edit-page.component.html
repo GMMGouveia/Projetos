@@ -1,0 +1,74 @@
+
+<h1>Edit Shift</h1>
+
+<form (ngSubmit)="shift">
+  
+  <div class="row">
+    <div class="col">
+      <mat-form-field>
+        <mat-label>Date</mat-label>
+        <input matInput [matDatepicker]="datepicker" [(ngModel)]="shift.date" name="date">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+        <mat-datepicker #datepicker>
+          <mat-datepicker-actions>
+            <button mat-button matDatepickerCancel>Cancel</button>
+            <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+          </mat-datepicker-actions>
+        </mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <mat-form-field>
+        <mat-label>Start Time</mat-label>
+        <input matInput type="time" [(ngModel)]="shift.startTime" name="startTime">
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <mat-form-field>
+        <mat-label>End Time</mat-label>
+        <input matInput type="time" [(ngModel)]="shift.endTime" name="endTime">
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <mat-form-field>
+        <mat-label>Price per Hour</mat-label>
+        <input matInput type="text" [(ngModel)]="shift.pricePerHour" name="pricePerHour">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field>
+        <mat-label>Workplace</mat-label>
+        <!-- <input matInput type="text" [(ngModel)]="shift.place" name="place">  modificação feita atraves do nuno colega-->
+        <mat-select [(ngModel)]="shift.place" name="place">
+          <mat-option value="office">Office</mat-option>
+          <mat-option value="fabric">Fabric</mat-option>
+          <mat-option value="deliver">Deliver</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <mat-form-field>
+        <mat-label>Shift Name</mat-label>
+        <input matInput type="text" [(ngModel)]="shift.name" name="name">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field>
+        <mat-label>Comments</mat-label>
+        <textarea matInput type="text" [(ngModel)]="shift.comments" name="comments"></textarea>
+      </mat-form-field>
+    </div>
+     <div class="row">
+      <div class="col-4">
+       <button class="" mat-raised-button color="primary" type="submit"
+              (click)="saving()">Save</button> 
+      </div> 
+  </div>
+  </div>
+
+</form>

@@ -1,0 +1,24 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col">
+            <form [formGroup]="loginForm" (ngSubmit)="signIn()">
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="username" formControlName="email" name="email">
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" formControlName="password" name="password">
+                </mat-form-field>
+                <br>
+                <button mat-raised-button color="primary" type="submit">Login</button>
+            </form>
+        </div>
+        <div class="col">
+            <h4>If you don't have a login Sinup 👍</h4>
+            <button mat-raised-button color="primary" (click)="signUp()" type="button">Sign Up</button>
+        </div>
+    </div>
+</div>

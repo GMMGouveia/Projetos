@@ -1,0 +1,91 @@
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+</mat-form-field>
+
+<form [formGroup]="searchForm">
+  <mat-form-field>
+    <mat-date-range-input [rangePicker]="mypicker">
+      <input matStartDate placeholder="Start date" formControlName="start">
+      <input matEndDate placeholder="End date" formControlName="end">
+    </mat-date-range-input>
+  </mat-form-field>
+  <mat-datepicker-toggle matSuffix [for]="mypicker"></mat-datepicker-toggle>
+  <mat-date-range-picker #mypicker></mat-date-range-picker>
+  <button class="selectBtn" mat-raised-button color="primary" (click)="showTable()">Select</button>
+</form>
+<pre></pre>
+<pre></pre>
+  
+
+<table mat-table [dataSource]="dataSource2" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let shift"> {{shift.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="date">
+    <th mat-header-cell *matHeaderCellDef> Date </th>
+    <td mat-cell *matCellDef="let shift"> {{shift.date}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="startTime">
+    <th mat-header-cell *matHeaderCellDef> Beginning time </th>
+    <td mat-cell *matCellDef="let shift"> {{shift.startTime}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="endTime">
+    <th mat-header-cell *matHeaderCellDef> End Time </th>
+    <td mat-cell *matCellDef="let shift"> {{shift.endTime}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="pricePerHour">
+    <th mat-header-cell *matHeaderCellDef> Price per hour € </th>
+    <td mat-cell *matCellDef="let shift"> {{shift.pricePerHour}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="place">
+    <th mat-header-cell *matHeaderCellDef> Shift-Place </th>
+    <td mat-cell *matCellDef="let shift"> {{shift.place}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Shift Name </th>
+    <td mat-cell *matCellDef="let shift"> {{shift.name}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="comments">
+    <th mat-header-cell *matHeaderCellDef> Comments </th>
+    <td mat-cell *matCellDef="let shift"> {{shift.comments}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="userWorkerId">
+    <th mat-header-cell *matHeaderCellDef> User Id </th>
+    <td mat-cell *matCellDef="let shift"> {{shift.userWorkerId}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="totalProfit">
+    <th mat-header-cell *matHeaderCellDef> Total proft per shift € </th>
+    <td mat-cell *matCellDef="let shift"> {{shift.totalProfit.toFixed(2)}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="btnEdit">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let shift"><a [routerLink]= "['/editShift',shift.id]"
+        class="btn btn-primary-raised">
+        <mat-icon>edit</mat-icon></a></td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
